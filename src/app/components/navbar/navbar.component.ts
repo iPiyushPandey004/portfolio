@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject, OnInit, Renderer2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -6,9 +7,13 @@ import { Component, HostListener } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  private readonly document = inject(DOCUMENT);
+  private readonly renderer = inject(Renderer2);
+
   menuOpen = false;
   activeSection = 'home';
+  isLightTheme = false;
 
   readonly links = [
     { label: 'About', id: 'about' },
@@ -18,7 +23,26 @@ export class NavbarComponent {
     { label: 'Contact', id: 'contact' }
   ];
 
+  ngOnInit(): void {
+    this.isLightTheme = this.document.defaultView?.localStorage.getItem('portfolio-theme') === 'light';
+    this.applyTheme();
+  }
+
   closeMenu(): void { this.menuOpen = false; }
+
+  toggleTheme(): void {
+    this.isLightTheme = !this.isLightTheme;
+    this.document.defaultView?.localStorage.setItem('portfolio-theme', this.isLightTheme ? 'light' : 'dark');
+    this.applyTheme();
+  }
+
+  private applyTheme(): void {
+    this.renderer.setAttribute(
+      this.document.documentElement,
+      'data-theme',
+      this.isLightTheme ? 'light' : 'dark'
+    );
+  }
 
   @HostListener('window:scroll')
   onScroll(): void {
