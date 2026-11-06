@@ -11,6 +11,9 @@
       @for (link of links; track link.id) {
         <a [href]="'#' + link.id" (click)="closeMenu()" [class.active]="activeSection === link.id" [attr.aria-current]="activeSection === link.id ? &quot;location&quot; : null">{{ link.label }}</a>
       }
+      <button class="theme-toggle" type="button" (click)="toggleTheme()" [attr.aria-pressed]="isLightTheme" [attr.aria-label]="isLightTheme ? 'Switch to dark theme' : 'Switch to light theme'">
+        <span aria-hidden="true">{{ isLightTheme ? '☾' : '☀' }}</span>
+      </button>
       <a class="nav-cta" href="#contact" (click)="closeMenu()">Let's talk <span aria-hidden="true">↗</span></a>
     </div>
   </nav>
