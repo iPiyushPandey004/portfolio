@@ -1,0 +1,17 @@
+<header class="nav-shell">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="#home" (click)="closeMenu()" aria-label="Saurabh Pandey portfolio home">
+      <span class="brand-mark">S<span>.</span></span>
+      <span class="brand-name">SAURABH PANDEY<span>JAVA DEVELOPER</span></span>
+    </a>
+    <button class="menu-toggle" type="button" (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-controls="nav-links" [attr.aria-label]="menuOpen ? &quot;Close navigation menu&quot; : &quot;Open navigation menu&quot;">
+      <span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links" [class.open]="menuOpen">
+      @for (link of links; track link.id) {
+        <a [href]="'#' + link.id" (click)="closeMenu()" [class.active]="activeSection === link.id" [attr.aria-current]="activeSection === link.id ? &quot;location&quot; : null">{{ link.label }}</a>
+      }
+      <a class="nav-cta" href="#contact" (click)="closeMenu()">Let's talk <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+</header>

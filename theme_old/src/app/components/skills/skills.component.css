@@ -1,0 +1,12 @@
+.skill-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.skill-card { padding: 25px; transition: transform .25s ease, border-color .25s ease; }
+.skill-card:hover { transform: translateY(-5px); border-color: rgba(169,155,255,.3); }
+.skill-card-top { display: flex; justify-content: space-between; align-items: center; }
+.skill-code { color: var(--accent); font-family: 'DM Mono', monospace; font-size: .72rem; }
+.skill-arrow { color: #77849c; font-size: 1.1rem; }
+.skill-card h3 { margin: 28px 0 19px; font-size: 1.15rem; }
+.skill-list { display: flex; flex-wrap: wrap; gap: 9px; }
+.skill-chip { padding: 8px 10px; border: 1px solid rgba(172,187,220,.13); border-radius: 9px; color: #c2cad9; background: rgba(255,255,255,.025); font-size: .76rem; transition: color .2s ease, border-color .2s ease; }
+.skill-card:hover .skill-chip { border-color: rgba(169,155,255,.2); }
+.skills-footnote { display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 28px; color: var(--muted); font-size: .78rem; }
+@media (max-width: 760px) { .skill-groups { grid-template-columns: 1fr; } .skill-card { padding: 23px; } .skill-card h3 { margin-top: 20px; } }

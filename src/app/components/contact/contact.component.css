@@ -1,0 +1,40 @@
+.contact { padding-top: 65px; }
+.contact-panel { position: relative; display: grid; grid-template-columns: 1fr .8fr; gap: clamp(35px, 7vw, 95px); padding: clamp(27px, 5.5vw, 64px); overflow: hidden; }
+.contact-glow { position: absolute; left: -90px; top: -120px; width: 340px; height: 340px; border-radius: 50%; background: rgba(255,122,0,.07); filter: blur(65px); pointer-events: none; }
+.contact-copy, .contact-form { position: relative; z-index: 1; }
+.contact-copy .section-title { font-size: clamp(2.3rem, 4.5vw, 3.7rem); }
+.contact-copy .section-description { max-width: 450px; }
+.contact-details { display: flex; align-items: center; gap: 13px; margin-top: 31px; }
+.contact-detail-icon { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(255,122,0,.2); border-radius: 12px; color: var(--accent); background: rgba(255,122,0,.06); }
+.contact-details small, .contact-details b { display: block; }.contact-details small { color: #78849b; font-family: 'DM Mono', monospace; font-size: .61rem; letter-spacing: .1em; }.contact-details b { margin-top: 5px; font-size: .84rem; font-weight: 600; }
+.social-links { display: flex; gap: 9px; margin-top: 25px; }.social-links a { display: inline-flex; align-items: center; gap: 13px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 9px; color: #c1cad9; font-size: .75rem; }.social-links a span { color: var(--accent); }
+.contact-form { display: flex; flex-direction: column; }
+.contact-form label { margin: 0 0 8px; color: #d6ddec; font-size: .78rem; font-weight: 600; }
+.contact-form input, .contact-form textarea { width: 100%; margin-bottom: 18px; padding: 13px 14px; border: 1px solid rgba(172,187,220,.15); border-radius: 11px; outline: none; color: var(--text); background: rgba(5,8,15,.42); font-size: .82rem; transition: border-color .2s ease, box-shadow .2s ease; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: #68748a; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: rgba(255,122,0,.55); box-shadow: 0 0 0 3px rgba(255,122,0,.07); }
+.contact-form textarea { resize: vertical; min-height: 115px; }
+.submit-btn { width: 100%; border: 0; }.submit-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.form-note { margin: 11px 0 0; text-align: center; color: #778198; font-size: .66rem; }.form-status { margin: 0 0 12px; color: var(--accent); font-size: .75rem; line-height: 1.5; }
+@media (max-width: 760px) { .contact-panel { grid-template-columns: 1fr; gap: 35px; padding: 28px 22px; } .contact-copy .section-title { font-size: 2.6rem; } }
+
+.email-link { display: block; margin-top: 4px; color: var(--text); font-size: .87rem; overflow-wrap: anywhere; }
+.email-link:hover { color: var(--accent); }
+.alternate-label { display: block; margin-top: 15px; }
+.form-heading { margin: 0 0 18px; font-size: 1rem; font-weight: 700; }
+
+.contact-form input[aria-invalid="true"],
+.contact-form textarea[aria-invalid="true"] { border-color: rgba(255, 154, 175, .75); }
+.field-hint { display: block; margin: -12px 0 16px; color: #8792a8; font-size: .68rem; line-height: 1.45; }
+.honeypot { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+.form-status { padding: 11px 13px; border: 1px solid var(--line); border-radius: 10px; line-height: 1.55; }
+.form-status.success { color: var(--accent); background: rgba(114, 242, 208, .06); }
+.form-status.error { color: var(--danger); background: rgba(255, 154, 175, .06); }
+.form-status.info { color: #c7c2ff; background: rgba(169, 155, 255, .06); }
+.submit-btn:disabled { opacity: .48; cursor: not-allowed; transform: none; }
+@media (max-width: 430px) {
+  .contact-panel { padding: 24px 17px; border-radius: 17px; }
+  .contact-copy .section-title { font-size: clamp(2.1rem, 10vw, 2.55rem); }
+  .email-link { font-size: .8rem; }
+  .social-links { flex-wrap: wrap; }
+}

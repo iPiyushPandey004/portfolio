@@ -1,0 +1,66 @@
+<section class="section resume" id="resume" aria-labelledby="resume-title">
+  <div class="container">
+    <div class="section-heading split-heading">
+      <div><p class="section-kicker">THE JOURNEY SO FAR</p><h2 class="section-title" id="resume-title">Experience that<br><span class="gradient-text">moves me forward.</span></h2></div>
+      
+    </div>
+    <div class="resume-grid">
+      <div>
+        <h3 class="column-title"><span class="column-icon">↗</span> Experience</h3>
+        <div class="timeline">
+          @for (item of experiences; track item.company) {
+            <article class="timeline-item">
+              <span class="timeline-dot"></span>
+              <p class="period">{{ item.period }}</p><h4>{{ item.role }}</h4><p class="company">{{ item.company }}</p>
+              <div class="company-projects">
+                @for (project of item.projects; track project.name) {
+                  <div class="company-project">
+                    <p class="project-name">{{ project.name }}</p>
+                    <p class="timeline-description">{{ project.description }}</p>
+                  </div>
+                }
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+      <div>
+        <h3 class="column-title"><span class="column-icon lavender">⌂</span> Education</h3>
+        <div class="timeline">
+          @for (item of education; track item.period + item.institution) {
+            <article class="timeline-item">
+              <span class="timeline-dot lavender-dot"></span>
+              <p class="period">{{ item.period }}</p><h4>{{ item.title }}</h4><p class="company">{{ item.institution }}</p><p class="timeline-description">{{ item.detail }}</p>
+            </article>
+          }
+        </div>
+        <div class="resume-download">
+          <div><b>Want the full picture?</b></div>
+          <div class="resume-action">
+            <button class="btn btn-secondary resume-button" type="button" (click)="showResumeNotice = true" aria-label="Show resume PDF availability">Resume PDF soon <span aria-hidden="true">↓</span></button>
+            @if (showResumeNotice) {
+              <p class="resume-notice" role="status" aria-live="polite">Updated PDF not uploaded yet. Will upload soon.</p>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="highlights-block">
+      <div class="highlights-heading"><p class="section-kicker">Achievements & Advocacy</p><h3 class="column-title">Publication & highlights</h3></div>
+      <div class="highlights-grid">
+        @for (item of highlights; track item.title) {
+          <article class="surface highlight-card">
+            <h4>
+              @if (item.link) {
+                <a [href]="item.link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+              } @else {
+                {{ item.title }}
+              }
+            </h4>
+            <p>{{ item.detail }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

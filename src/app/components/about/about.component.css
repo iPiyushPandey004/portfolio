@@ -1,0 +1,23 @@
+.about { border-top: 1px solid rgba(172,187,220,.05); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr .85fr; gap: 16px; }
+.about-card { padding: 27px; transition: transform .25s ease, border-color .25s ease; }
+.about-card:hover { transform: translateY(-5px); border-color: rgba(255,122,0,.28); }
+.card-index { color: #77849c; font-family: 'DM Mono', monospace; font-size: .67rem; letter-spacing: .1em; }
+.icon-tile { display: grid; place-items: center; width: 46px; height: 46px; margin: 28px 0 23px; border: 1px solid rgba(255,122,0,.2); border-radius: 14px; color: var(--accent); background: rgba(255,122,0,.07); font-size: 1.35rem; }
+.icon-tile.lavender { color: var(--accent-2); border-color: rgba(255,177,92,.2); background: rgba(255,177,92,.07); }
+.about-card h3 { margin: 0; font-size: 1.1rem; letter-spacing: -.025em; }
+.about-card p { margin: 13px 0 0; color: var(--muted); font-size: .88rem; line-height: 1.8; }
+.about-note { display: flex; flex-direction: column; justify-content: center; padding: 20px 20px 20px 27px; border-left: 1px solid rgba(255,122,0,.35); }
+.note-mark { color: var(--accent); font-size: 3.8rem; line-height: .8; }
+.about-note p { margin: 15px 0 25px; font-size: 1.25rem; line-height: 1.55; letter-spacing: -.035em; }
+@media (max-width: 850px) { .about-grid { grid-template-columns: 1fr 1fr; } .about-note { grid-column: 1 / -1; padding: 20px 24px; } }
+@media (max-width: 560px) { .about-grid { grid-template-columns: 1fr; } .about-note { grid-column: auto; } .about-card { padding: 23px; } }
+
+.more-about { display: grid; grid-template-columns: minmax(180px, .65fr) 1.35fr; gap: 24px; align-items: start; margin-top: 42px; padding: 27px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.018); }
+.more-about .section-kicker { margin-bottom: 9px; }
+.more-about h3 { margin: 0; font-size: 1.15rem; }
+.social-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.social-list a { display: inline-flex; align-items: center; gap: 9px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); font-size: .82rem; transition: color .2s ease, border-color .2s ease, transform .2s ease; }
+.social-list a span { color: var(--accent); }
+.social-list a:hover { color: var(--text); border-color: rgba(255,122,0,.38); transform: translateY(-2px); }
+@media (max-width: 650px) { .more-about { grid-template-columns: 1fr; padding: 22px; } }

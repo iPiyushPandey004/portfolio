@@ -1,0 +1,53 @@
+.resume { background: linear-gradient(180deg, transparent, rgba(17,22,35,.42), transparent); }
+.split-heading { display: flex; align-items: end; justify-content: space-between; gap: 35px; }
+.split-heading .section-description { max-width: 380px; margin-bottom: 5px; }
+.resume-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 7vw, 95px); }
+.column-title { display: flex; align-items: center; gap: 12px; margin: 0 0 28px; font-size: 1.1rem; }
+.column-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; color: var(--accent); background: rgba(255,122,0,.08); }
+.column-icon.lavender { color: var(--accent-2); background: rgba(255,177,92,.08); }
+.timeline { position: relative; padding-left: 22px; border-left: 1px solid rgba(172,187,220,.16); }
+.timeline-item { position: relative; padding: 0 0 33px 15px; }
+.timeline-item:last-child { padding-bottom: 5px; }
+.timeline-dot { position: absolute; top: 4px; left: -27px; width: 10px; height: 10px; border: 2px solid var(--accent); border-radius: 50%; background: var(--bg); box-shadow: 0 0 15px rgba(255,122,0,.25); }
+.lavender-dot { border-color: var(--accent-2); box-shadow: 0 0 15px rgba(255,177,92,.2); }
+.period { margin: 0 0 9px; color: var(--accent); font-family: 'DM Mono', monospace; font-size: .68rem; letter-spacing: .08em; }
+.timeline-item h4 { margin: 0; font-size: 1.06rem; letter-spacing: -.02em; }
+.company { margin: 6px 0 0; color: var(--accent-2); font-size: .83rem; }
+.timeline-description { margin: 12px 0 0; color: var(--muted); font-size: .85rem; line-height: 1.8; }
+.resume-download { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 30px; padding: 17px; border: 1px dashed rgba(172,187,220,.2); border-radius: 14px; }
+.resume-download b, .resume-download small { display: block; }.resume-download b { font-size: .82rem; }.resume-download small { margin-top: 5px; color: var(--muted); font-size: .72rem; }.resume-download > span { color: var(--accent); font-size: 1.35rem; }
+@media (max-width: 760px) { .split-heading { display: block; } .split-heading .section-description { max-width: 600px; } .resume-grid { grid-template-columns: 1fr; gap: 42px; } }
+
+.project-name { margin: 12px 0 0; color: var(--text); font-size: .82rem; font-weight: 700; }
+.resume-button { min-height: 40px; padding: 0 12px; white-space: nowrap; font-size: .75rem; }
+.resume-download { align-items: center; }
+@media (max-width: 480px) { .resume-download { align-items: flex-start; flex-direction: column; } }
+
+.highlights-block { margin-top: 64px; }
+.highlights-heading { margin-bottom: 22px; }
+.highlights-heading .section-kicker { margin-bottom: 8px; }
+.highlights-heading .column-title { margin-bottom: 0; }
+.highlights-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.highlight-card { padding: 20px; }
+.highlight-card h4 { margin: 0; font-size: .95rem; line-height: 1.5; }
+.highlight-card h4 a { color: inherit; text-decoration: none; }
+.highlight-card h4 a:hover { color: var(--accent-2); text-decoration: underline; text-underline-offset: 3px; }
+.highlight-card h4 a:focus-visible { color: var(--accent-2); outline: 2px solid var(--accent-2); outline-offset: 3px; }
+.highlight-card p { margin: 10px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.75; }
+@media (max-width: 760px) { .highlights-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .highlights-grid { grid-template-columns: 1fr; } }
+
+.company-projects { margin-top: 16px; padding-left: 14px; border-left: 1px solid rgba(172,187,220,.16); }
+.company-project + .company-project { margin-top: 18px; padding-top: 15px; border-top: 1px solid rgba(172,187,220,.1); }
+.company-project .project-name { margin-top: 0; }
+.company-project .timeline-description { margin-top: 8px; }
+
+/* Phase 5 refinement: clearer employer/client hierarchy */
+.timeline-item > .company { color: var(--text); font-weight: 700; font-size: .9rem; }
+.company-projects { margin-top: 13px; padding: 14px 16px; border: 1px solid rgba(255,122,0,.18); border-left: 2px solid var(--accent); border-radius: 0 12px 12px 0; background: rgba(255,122,0,.035); }
+.company-project .project-name { margin-top: 0; color: var(--accent-2); line-height: 1.55; }
+
+/* Resume PDF placeholder: reveal availability notice beneath the button on click. */
+.resume-action { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.resume-notice { margin: 0; max-width: 260px; color: var(--muted); font-size: .72rem; line-height: 1.5; text-align: right; }
+@media (max-width: 480px) { .resume-action { align-items: flex-start; } .resume-notice { text-align: left; } }

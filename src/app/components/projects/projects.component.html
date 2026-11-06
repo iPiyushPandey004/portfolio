@@ -1,0 +1,27 @@
+<section class="section projects" id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-heading project-heading">
+      <div><p class="section-kicker">SELECTED WORK</p><h2 class="section-title" id="projects-title">Ideas turned into<br><span class="gradient-text">real things.</span></h2></div>
+      <p class="section-description">A collection of personal projects I have built. More projects will be added as they are ready to share.</p>
+    </div>
+    <div class="project-grid">
+      @for (project of projects; track project.number) {
+        <article class="surface project-card">
+          <div class="project-art" [class.mint]="project.accent === 'mint'" [class.violet]="project.accent === 'violet'" [class.blue]="project.accent === 'blue'">
+            <div class="art-grid"></div>
+            <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>{{ project.slug }}.app</span></div><div class="browser-content"><div class="mock-sidebar"></div><div class="mock-main"><span></span><span></span><span></span><div class="mock-blocks"><i></i><i></i><i></i></div></div></div></div>
+            <span class="project-number">{{ project.number }}</span>
+          </div>
+          <div class="project-content">
+            <p class="project-type">{{ project.type }}</p>
+            <h3>{{ project.name }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-tags">@for (tag of project.tags; track tag) { <span>{{ tag }}</span> }</div>
+            <div class="project-links">@if (project.github) { <a [href]="project.github" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a> } @else { <a href="#contact" [attr.aria-label]="'Ask me about ' + project.name">Project details <span aria-hidden="true">↗</span></a> }</div>
+          </div>
+        </article>
+      }
+    </div>
+    <p class="project-note">More personal projects will be added here as they are ready to share.</p>
+  </div>
+</section>
