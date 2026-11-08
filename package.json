@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --base-href /portfolio/ && gh-pages -d dist/angular-developer-portfolio"
+    "deploy": "ng build --base-href /portfolio/ && gh-pages -d dist/angular-developer-portfolio/browser"
   },
   "dependencies": {
     "@angular/common": "22.2.3",
